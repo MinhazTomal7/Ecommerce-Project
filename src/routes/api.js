@@ -1,5 +1,5 @@
 const express = require('express');
-import * as ProductController from '../controllers/ProductController';
+const ProductController = require('../controllers/ProductController');
 
 
 
