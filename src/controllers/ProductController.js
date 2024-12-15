@@ -46,24 +46,53 @@ exports.ProductListByBrand = async (req, res) => {
 
 
 exports.ProductListByCategory= async(req, res)=>{
-    let result = await ListByCategoryService()
-    return res.status(200).json(result)
+    try {
+        const CategoryID = req.params.CategoryID;
+        let result = await ListByCategoryService(CategoryID);
+        res.status(200).json(result);
+    } catch (err) {
+        res.status(500).json({ status: "Failed", data: err.toString() });
+    }
 }
 
 exports.ProductListBySmiler= async(req, res)=> {
-
+    try {
+        const CategoryID = req.params.CategoryID;
+        let result = await ListByCategoryService(CategoryID);
+        res.status(200).json(result);
+    } catch (err) {
+        res.status(500).json({ status: "Failed", data: err.toString() });
+    }
 }
 
 exports.ProductListByKeyword= async(req, res)=>{
-
+    try {
+        const Keyword = req.params.Keyword;
+        let result = await ListByKeywordService(Keyword);
+        res.status(200).json(result);
+    } catch (err) {
+        res.status(500).json({ status: "Failed", data: err.toString() });
+    }
 }
 
 exports.ProductListByRemark= async(req, res)=>{
-
+    try {
+        const Remark = req.params.Remark;
+        let result = await ListByRemarkService(Remark);
+        res.status(200).json(result);
+    } catch (err) {
+        res.status(500).json({ status: "Failed", data: err.toString() });
+    }
 }
 
 exports.ProductDetails= async(req, res)=>{
-
+    try {
+        const ProductID = req.params.ProductID;
+        let result = await DetailsService(ProductID);
+        res.status(200).json(result);
+    } catch (err) {
+        res.status(500).json({ status: "Failed", data: err.toString() });
+    }
 }
 
 exports.ProductReviewList= async(req, res)=>{
