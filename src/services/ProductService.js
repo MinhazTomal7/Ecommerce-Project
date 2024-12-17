@@ -356,13 +356,43 @@ const ListByKeywordService = async (Keyword)=>{
 }
 
 
+const ReviewListService = async (ProductID) => {
+    const MatchStage = { $match: { productID: new ObjectID(ProductID) } };
 
+    const JoinWithProfileStage = {
+        $lookup: {
+            from: "profiles",
+            localField: "userID",
+            foreignField: "userID",
+            as: "profiles",
+        },
+    };
 
+    // Unwind profiles to flatten the result
+    const UnwindProfilesStage = { $unwind: { path: "$profiles", preserveNullAndEmptyArrays: true } };
 
-const ReviewListService = async ()=>{
+    // Optional: Filter to exclude reviews without matching profiles
+    const FilterValidProfilesStage = { $match: { "profiles.userID": { $exists: true } } };
 
+    const ProjectStage = {
+        $project: {
+            des: 1,
+            rating: 1,
+            "profiles.cus_name": 1,
 
-}
+        },
+    };
+
+    const data = await ReviewModel.aggregate([
+        MatchStage,
+        JoinWithProfileStage,
+        UnwindProfilesStage,
+        FilterValidProfilesStage,
+        ProjectStage,
+    ]);
+
+    return { status: "Success", data: data };
+};
 
 
 

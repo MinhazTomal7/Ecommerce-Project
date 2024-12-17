@@ -58,7 +58,7 @@ exports.ProductListByCategory= async(req, res)=>{
 exports.ProductListBySmiler= async(req, res)=> {
     try {
         const CategoryID = req.params.CategoryID;
-        let result = await ListByCategoryService(CategoryID);
+        let result = await ListBySmilerService(CategoryID);
         res.status(200).json(result);
     } catch (err) {
         res.status(500).json({ status: "Failed", data: err.toString() });
@@ -97,6 +97,13 @@ exports.ProductDetails= async(req, res)=>{
 
 exports.ProductReviewList= async(req, res)=>{
 
+    try {
+        const ProductID = req.params.ProductID;
+        let result = await ReviewListService(ProductID);
+        res.status(200).json(result);
+    } catch (err) {
+        res.status(500).json({ status: "Failed", data: err.toString() });
+    }
 }
 
 
