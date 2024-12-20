@@ -4,8 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="1c7e60a5-49e8-4d91-9285-1d98f2d39c4a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
     <list default="true" id="60ae343d-1359-416f-bd66-a9c67b37e2aa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/src/controllers/ProductController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ProductController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ProductModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ProductModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ProductService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ProductService.js" afterDir="false" />
+>>>>>>> 60e9994d6b81e4a1b926361a6040cd767b275b21
+>>>>>>> 28336ccf9a9a48c408067c5f4a077966f3460172
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,11 +72,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1733890760694</updated>
+<<<<<<< HEAD
+      <workItem from="1733890761941" duration="9441000" />
+      <workItem from="1734233435030" duration="213000" />
+=======
       <workItem from="1733890761941" duration="8691000" />
       <workItem from="1734113081814" duration="1717000" />
+<<<<<<< HEAD
       <workItem from="1734187406533" duration="3417000" />
       <workItem from="1734331996724" duration="2037000" />
       <workItem from="1734699990291" duration="122000" />
+=======
+      <workItem from="1734187406533" duration="3325000" />
+>>>>>>> 60e9994d6b81e4a1b926361a6040cd767b275b21
+>>>>>>> 28336ccf9a9a48c408067c5f4a077966f3460172
     </task>
     <servers />
   </component>
