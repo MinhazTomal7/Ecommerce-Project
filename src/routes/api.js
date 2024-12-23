@@ -1,6 +1,8 @@
 const express = require('express');
 const ProductController = require('../controllers/ProductController');
-
+const UserController = require('../controllers/UserController')
+const WishListController = require('../controllers/WishListController')
+const AuthVerification = require('../middlewares/AuthVerification')
 
 
 const router = express.Router();
@@ -18,6 +20,20 @@ router.get('/ProductDetails/:ProductID',ProductController.ProductDetails);
 router.get('/ProductReviewList/:ProductID',ProductController.ProductReviewList);
 
 
+//User
+
+router.get('/UserOTP/:email',UserController.UserOTP);
+router.get('/VerifyOTP/:email/:otp',UserController.VerifyOTP);
+router.get('/UserLogout', AuthVerification, UserController.UserLogout);
+router.post('/CreateProfile', AuthVerification, UserController.CreateProfile);
+router.post('/UpdateProfile', AuthVerification, UserController.UpdateProfile);
+router.get('/ReadProfile', AuthVerification, UserController.ReadProfile);
+
+//Wish List
+
+router.post('/SaveWishList', AuthVerification, WishListController.SaveWishList);
+router.post('/RemoveWishList', AuthVerification, WishListController.RemoveWishList);
+router.get('/WishList', AuthVerification, WishListController.WishList);
 
 
 

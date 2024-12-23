@@ -15,6 +15,7 @@ const path = require("path");
 
 
 let URL="mongodb://localhost:27017/ecom"
+
 //let option={user:'',pass:"",autoIndex:true};
 mongoose.connect(URL).then((res)=>{
     console.log("Database Connected")
@@ -32,6 +33,8 @@ app.use(hpp())
 
 app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({limit: '50mb'}));
+app.use(express.urlencoded({ extended: true }));
+
 
 
 const limiter= rateLimit({windowMs:15*60*1000,max:3000})
