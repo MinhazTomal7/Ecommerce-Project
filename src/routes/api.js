@@ -2,6 +2,7 @@ const express = require('express');
 const ProductController = require('../controllers/ProductController');
 const UserController = require('../controllers/UserController')
 const WishListController = require('../controllers/WishListController')
+const CartListController = require('../controllers/CartListController')
 const AuthVerification = require('../middlewares/AuthVerification')
 
 
@@ -35,6 +36,11 @@ router.post('/SaveWishList', AuthVerification, WishListController.SaveWishList);
 router.post('/RemoveWishList', AuthVerification, WishListController.RemoveWishList);
 router.get('/WishList', AuthVerification, WishListController.WishList);
 
+//Cart List
 
+router.post('/SaveCartList', AuthVerification, CartListController.SaveCartList);
+router.post('/UpdateCartList/:cartID', AuthVerification, CartListController.UpdateCartList);
+router.post('/RemoveCartList', AuthVerification, CartListController.RemoveCartList);
+router.get('/CartList', AuthVerification, CartListController.CartList);
 
 module.exports = router;
