@@ -14,7 +14,9 @@ const mongoose =require('mongoose');
 const path = require("path");
 
 
-let URL="mongodb://localhost:27017/ecom"
+require('dotenv').config();
+let URL = process.env.MONGO_URL;
+
 
 //let option={user:'',pass:"",autoIndex:true};
 mongoose.connect(URL).then((res)=>{
